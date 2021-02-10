@@ -3,6 +3,9 @@ terraform {
     vault = {
       source = "hashicorp/vault"
     }
+    aci = {
+      source = "CiscoDevNet/aci"
+    }
   }
   backend "remote" {
     organization = "hc-implementation-services"
@@ -17,6 +20,10 @@ variable "approle_id" {}
 variable "approle_secret" {}
 
 variable "password" {
+  sensitive = true
+}
+
+variable "url" {
   sensitive = true
 }
 
@@ -35,5 +42,5 @@ provider "vault" {
 provider "aci" {
   username = "admin"
   password = var.password
-  url      = "https://my-cisco-aci.com"
+  url      = var.url
 }
