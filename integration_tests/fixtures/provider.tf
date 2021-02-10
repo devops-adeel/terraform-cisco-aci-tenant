@@ -16,10 +16,14 @@ terraform {
 variable "approle_id" {}
 variable "approle_secret" {}
 
+variable "password" {
+  sensitive = true
+}
+
 provider "vault" {
   auth_login {
     namespace = "admin/terraform-cisco-aci-tenant"
-    path = "auth/approle/login"
+    path      = "auth/approle/login"
 
     parameters = {
       role_id   = var.approle_id
@@ -28,3 +32,8 @@ provider "vault" {
   }
 }
 
+provider "aci" {
+  username = "admin"
+  password = var.password
+  url      = "https://my-cisco-aci.com"
+}
