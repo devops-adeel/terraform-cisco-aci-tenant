@@ -1,4 +1,4 @@
-## Terraform <MODULE-NAME>
+## Terraform Cisco ACI Tenant
 
 This terraform module creates....
 
@@ -6,7 +6,7 @@ This terraform module creates....
 
 ## Requirements
 
-<ADD PRE-REQUISITES HERE>
+<! ADD PRE-REQUISITES HERE>
 
 ## Providers
 
@@ -26,3 +26,23 @@ This terraform module creates....
 | Name | Description |
 |------|-------------|
 | `example_output` | example description |
+
+
+# Logical Requirement
+
+The intent of this TF module is to produce a tenant scoped per service, per
+application, per environment.
+
+It assumes that the foundational objects are in place and this module is to
+scale onboarding of application services.  Ideally triggered by a creation of a
+service definition (i.e. service-mesh registered in service-registry e.g. consul)
+
+Each service-definition will produce the following resources:
+
+| Name                      | Description                                          |
+| ------                    | -------------                                        |
+| `aci_tenant`              | Description of function & why it's required per svc. |
+| `aci_vrf`                 | Description of function & why it's required per svc. |
+| `aci_bridge_domain`       | Description of function & why it's required per svc. |
+| `aci_subnet`              | Description of function & why it's required per svc. |
+| `aci_application_profile` | Description of function & why it's required per svc. |
