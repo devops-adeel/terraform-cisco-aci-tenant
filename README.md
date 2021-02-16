@@ -30,19 +30,24 @@ This terraform module creates....
 
 # Logical Requirement
 
-The intent of this TF module is to produce a tenant scoped per service, per
-application, per environment.
+The intent of this TF module is to produce a tenant scoped per customer, the
+customer will then have multiple applications and environments in the form of
+EPG.
 
 It assumes that the foundational objects are in place and this module is to
 scale onboarding of application services.  Ideally triggered by a creation of a
 service definition (i.e. service-mesh registered in service-registry e.g. consul)
 
-Each service-definition will produce the following resources:
+To understand which resources are per customer and which are per application,
+resources will be listed here with `type` column to indicate whether it's `customer`
+or `application` or `service`.
 
-| Name                      | Description                                          |
-| ------                    | -------------                                        |
-| `aci_tenant`              | Description of function & why it's required per svc. |
-| `aci_vrf`                 | Description of function & why it's required per svc. |
-| `aci_bridge_domain`       | Description of function & why it's required per svc. |
-| `aci_subnet`              | Description of function & why it's required per svc. |
-| `aci_application_profile` | Description of function & why it's required per svc. |
+| Name                      | Description                                          | Type          |
+| ------                    | -------------                                        | ----          |
+| `aci_tenant`              | Description of function & why it's required per svc. | `customer`    |
+| `aci_vrf`                 | Description of function & why it's required per svc. | `customer`    |
+| `aci_bridge_domain`       | Description of function & why it's required per svc. | `customer`    |
+| `aci_subnet`              | Description of function & why it's required per svc. | `customer`    |
+| `aci_application_profile` | Description of function & why it's required per svc. | `application` |
+| `aci_application_epg`     | Description of function & why it's required per svc. | `service`     |
+| `aci_contract`            | Description of function & why it's required per svc. | `service`     |
