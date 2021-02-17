@@ -16,15 +16,15 @@ This terraform module creates....
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| `example_input` | example description | `string` | n/a | yes |
-| `env` | The environment name the identity principal will operate in | `string` | `"dev"` | no |
+| Name            | Description                                                 | Type     | Default   | Required   |
+| ------          | -------------                                               | ------   | --------- | :--------: |
+| `example_input` | example description                                         | `string` | n/a       | yes        |
+| `env`           | The environment name the identity principal will operate in | `string` | `"dev"`   | no         |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
+| Name             | Description         |
+| ------           | -------------       |
 | `example_output` | example description |
 
 

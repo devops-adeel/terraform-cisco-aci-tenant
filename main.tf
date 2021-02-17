@@ -5,7 +5,7 @@ locals {
 resource "aci_tenant" "default" {
   name        = local.name
   name_alias  = local.name
-  description = "This tenant is created ${var.application}"
+  description = "This tenant is created ${local.name}"
 }
 
 resource "aci_vrf" "default" {
@@ -17,15 +17,15 @@ resource "aci_vrf" "default" {
 resource "aci_bridge_domain" "default" {
   tenant_dn          = aci_tenant.default.id
   name               = local.name
-  description        = "This bridge-domain is created for ${var.application}"
+  description        = "This bridge-domain is created for ${local.name}"
   relation_fv_rs_ctx = aci_vrf.default.name
 }
 
 resource "aci_subnet" "default" {
   bridge_domain_dn = aci_bridge_domain.default.id
-  ip               = "10.0.0.1/16"
+  ip               = var.aci_subnet
   scope            = "private"
-  description      = "This subject is created for ${var.application}"
+  description      = "This subject is created for ${local.name}"
 }
 
 resource "aci_application_profile" "default" {
