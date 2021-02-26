@@ -59,5 +59,5 @@ or `application` or `service`.
 | `aci_contract_subject`    | Create/Modify contract subjects | `application`     |
 | `aci_epg_to_static_path`  | Add/Modify EPG to the path | `application`     |
 | `aci_vlan_pool`           | Create/Modify VLAN Pool for BD | `application`     |
-| `aci_access_generic`      | Assign EPG to AEP | `application`     |
-| `aci_epgs_using_function` | Assign EPG to AEP | `application`     |
+| `aci_vmm_domain`           | Create/Modify VMM Domains | `application`     |
+| `aci_filter_entry`           | Create/Modify Contract Filter Entry | `application`     |

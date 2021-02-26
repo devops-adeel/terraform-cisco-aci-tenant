@@ -11,5 +11,5 @@ variable "global" {
 }
 
 output "id" {
-  value       = aci_vrf.default.id
+  value       = aci_contract.default.id
 }

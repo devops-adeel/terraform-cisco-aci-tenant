@@ -2,14 +2,13 @@ variable "name" {
   type = string
 }
 
-variable "tenant-id" {
+variable "contract" {
   type = string
 }
 
+variable "filter" {
+  type = string
+}
 variable "global" {
   type = map
-}
-
-output "id" {
-  value       = aci_vrf.default.id
 }

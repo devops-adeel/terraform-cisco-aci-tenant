@@ -2,6 +2,6 @@ variable "name" {
   type = string
 }
 
-output "tenant-id" {
-  value       = aci_tenant.showcase_dc.id
+output "id" {
+  value       = aci_tenant.default.id
 }

@@ -1,3 +1,3 @@
-resource "aci_tenant" "showcase_dc" {
+resource "aci_tenant" "default" {
   name = var.name
 }
