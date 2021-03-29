@@ -1,0 +1,189 @@
+{
+  "aci_bd-names": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "BD1": "BD1-prod",
+      "BD2": "BD2-prod"
+    }
+  },
+  "aci_bd-tenants": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "BD1": "integration-test",
+      "BD2": "integration-test"
+    }
+  },
+  "aci_contract-names": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "contract1": "Contract1-prod",
+      "contract3": "Contract3-prod"
+    }
+  },
+  "aci_contract-tenants": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "contract1": "integration-test",
+      "contract3": "integration-test"
+    }
+  },
+  "aci_contract_subject-contract": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "subject1": "Contract1-prod"
+    }
+  },
+  "aci_contract_subject-names": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "subject1": "tf-contract-subject1-prod"
+    }
+  },
+  "aci_contract_subject-tenants": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "subject1": "integration-test"
+    }
+  },
+  "aci_epg-ap": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "EPG1": "AP1-prod",
+      "EPG2": "AP2-prod",
+      "EPG3": "AP2-prod"
+    }
+  },
+  "aci_epg-names": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "EPG1": "EPG1-prod",
+      "EPG2": "EPG2-prod",
+      "EPG3": "EPG3-prod"
+    }
+  },
+  "aci_epg-tenant": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "EPG1": "integration-test",
+      "EPG2": "integration-test",
+      "EPG3": "integration-test"
+    }
+  },
+  "aci_filter-names": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "Filter1": "Filter1-prod",
+      "Filter2": "Filter2-prod"
+    }
+  },
+  "aci_filter-tenants": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "Filter1": "integration-test",
+      "Filter2": "integration-test"
+    }
+  },
+  "aci_filter_entry-filter": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "entry1": "Filter1-prod",
+      "entry2": "Filter1-prod"
+    }
+  },
+  "aci_filter_entry-names": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "entry1": "entry1-prod",
+      "entry2": "entry2-prod"
+    }
+  },
+  "aci_filter_entry-tenants": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "entry1": "integration-test",
+      "entry2": "integration-test"
+    }
+  },
+  "aci_vrf-names": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "VRF1": "VRF1-prod",
+      "VRF2": "VRF2-prod"
+    }
+  },
+  "aci_vrf-tenants": {
+    "sensitive": false,
+    "type": [
+      "map",
+      "string"
+    ],
+    "value": {
+      "VRF1": "integration-test",
+      "VRF2": "integration-test"
+    }
+  }
+}

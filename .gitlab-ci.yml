@@ -1,0 +1,57 @@
+---
+stages:
+    - Tests
+    - Production
+Dry-Run:
+    except:
+        changes:
+            - "*.md"
+    stage: Tests
+    tags:
+        - natilik
+        - docker
+        - showcase
+        - iac
+    script:
+        - export TF_VAR_ACI_USERNAME=$ACI_SIM_USERNAME TF_VAR_ACI_PASSWORD=$ACI_SIM_PASSWORD TF_VAR_ACI_URL=$ACI_SIM_URL
+        - export ACI_USERNAME=$ACI_SIM_USERNAME ACI_PASSWORD=$ACI_SIM_PASSWORD ACI_URL=$ACI_SIM_URL
+        - cd $CI_PROJECT_DIR/tests/integration
+        - terraform init
+        - terraform plan
+    except:
+        - master
+
+Integration:
+    except:
+        changes:
+            - "*.md"
+    stage: Tests
+    tags:
+        - natilik
+        - docker
+        - showcase
+        - iac
+    script:
+        - export TF_VAR_ACI_USERNAME=$ACI_SIM_USERNAME TF_VAR_ACI_PASSWORD=$ACI_SIM_PASSWORD TF_VAR_ACI_URL=$ACI_SIM_URL
+        - export ACI_USERNAME=$ACI_SIM_USERNAME ACI_PASSWORD=$ACI_SIM_PASSWORD ACI_URL=$ACI_SIM_URL
+        - git clone https://github.com/maty0609/inspec-aci.git /src/inspec-aci
+        - cd $CI_PROJECT_DIR/tests/integration
+        - terraform init
+        - terraform apply --auto-approve
+        - terraform output --json > ../compliance/files/output.json
+        - inspec exec ../compliance
+        - terraform destroy -auto-approve
+    except:
+        - master
+Production:
+    except:
+        changes:
+            - "*.md"
+    stage: Production
+    tags:
+        - docker
+        - natilik
+    script:
+        - echo "testing"
+    only:
+        - master

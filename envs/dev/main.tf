@@ -5,7 +5,7 @@ variable "ACI_URL" {}
 locals {
   config = {
     client = "client-name"
-    env = "prod"
+    env = "dev"
   }
 }
 

@@ -4,14 +4,18 @@ variable "ACI_URL" {}
 
 locals {
   config = {
-    client = "client-name"
+    client = "integration-test"
     env = "prod"
   }
 }
 
+
 provider "aci" {
+   # cisco-aci user name
    username = var.ACI_USERNAME
+   # cisco-aci password
    password = var.ACI_PASSWORD
+   # cisco-aci url
    url = var.ACI_URL
    insecure = true
 }

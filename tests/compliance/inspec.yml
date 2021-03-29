@@ -1,0 +1,10 @@
+name: Cisco ACI Compliance Tests
+title: Cisco ACI InSpec
+maintainer: Matyas Prokop
+copyright: Matyas Prokop
+copyright_email: mprokop@natilik.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.1.0
+supports:
+  platform: os
