@@ -18,7 +18,7 @@ variable "approle_secret" {}
 
 provider "vault" {
   auth_login {
-    namespace = "vault_namespace"
+    namespace = "admin/terraform-cisco-aci-tenant"
     path = "auth/approle/login"
 
     parameters = {
